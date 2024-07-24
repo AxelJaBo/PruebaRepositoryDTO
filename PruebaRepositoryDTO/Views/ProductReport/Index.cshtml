@@ -1,0 +1,47 @@
+﻿@model List<PruebaRepositoryDTO.DTO.ProductoReportDTO>
+
+<H1 class="text-center">Reporte de Productos</H1>
+
+<section class="container">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>ID del Producto</th>
+				<th>Nombre del Producto</th>
+				<th>Marca</th>
+				<th>Modelo</th>
+				<th>Tipo de Producto</th>
+				<th>Proveedor</th>
+				<th>Cantidad</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem=> item.IDProducto)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem=> item.NombreProducto)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem=> item.Marca)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem=> item.Modelo)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem=> item.TipoProducto)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem=> item.Proveedor)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem=> item.Cantidad)
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</section>

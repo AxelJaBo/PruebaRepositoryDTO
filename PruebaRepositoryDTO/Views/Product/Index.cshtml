@@ -1,0 +1,44 @@
+﻿@model List<PruebaRepositoryDTO.DTO.PruductDTO>
+
+<H1 class="text-center">Productos</H1>
+
+<section class="container">
+	<a asp-action="Create" class="btn btn-primary">Agregar Producto</a>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Nombre del Producto</th>
+				<th>Id del Proveedor</th>
+				<th>Id del Tipo de Producto</th>
+				<th>Cantidad</th>
+				<th>Modelo</th>
+				<th>Marca</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem=> item.Nombre)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem=> item.IDProveedor)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem=> item.IDTipo)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem=> item.Cantidad)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem=> item.Modelo)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem=> item.Marca)
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</section>
