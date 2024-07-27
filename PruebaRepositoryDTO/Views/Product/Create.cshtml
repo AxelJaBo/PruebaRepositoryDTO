@@ -2,52 +2,62 @@
 
 <h1 class="text-center"></h1>
 <form asp-action="Create">
-	<div class="row">
-		<div class="col-md-6">
-			<div class="form-group">
-				<label asp-for="Nombre" class="control-label">Nombre</label>
-				<input asp-for="Nombre" class="form-control" placeholder="Ingresa el nombre del producto"/>
-				<span asp-validation-for="Nombre" class="text-danger"></span>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="form-group">
-				<label asp-for="IDProveedor" class="control-label">Id del proveedor</label>
-				<input asp-for="IDProveedor" class="form-control" placeholder="Ingresa el id del proveedor" />
-				<span asp-validation-for="IDProveedor" class="text-danger"></span>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="form-group">
-				<label asp-for="IDTipo" class="control-label">Id del tipo de producto</label>
-				<input asp-for="IDTipo" class="form-control" placeholder="Ingresa el id del tipo de producto" />
-				<span asp-validation-for="IDTipo" class="text-danger"></span>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="form-group">
-				<label asp-for="Cantidad" class="control-label">Cantidad</label>
-				<input asp-for="Cantidad" class="form-control" placeholder="Ingresa la cantidad de productos" />
-				<span asp-validation-for="Cantidad" class="text-danger"></span>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="form-group">
-				<label asp-for="Modelo" class="control-label">Modelo</label>
-				<input asp-for="Modelo" class="form-control" placeholder="Ingresa el modelo del producto" />
-				<span asp-validation-for="Modelo" class="text-danger"></span>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="form-group">
-				<label asp-for="Marca" class="control-label">Marca</label>
-				<input asp-for="Marca" class="form-control" placeholder="Ingresa la marca del producto" />
-				<span asp-validation-for="Marca" class="text-danger"></span>
-			</div>
-		</div>
-		<br />
-		<div class="form-group text-center">
-			<button type="submit" class="btn btn-primary">Añadir Producto</button>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label">Nombre</label>
+                <input asp-for="Nombre" class="form-control" placeholder="Ingresa el nombre del producto" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="IDProveedor" class="control-label">Proveedores</label>
+                <select asp-for="IDProveedor" class="form-control">
+                    @foreach (var item in Model.Providers)
+                    {
+                        <option value="@item.ID">@item.Nombre</option>
+                    }
+                </select>
+                <span asp-validation-for="IDProveedor" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="IDTipo" class="control-label">Id del tipo de producto</label>
+                <select asp-for="IDTipo" class="form-control">
+                    @foreach (var item in Model.ProductTypes)
+                    {
+                        <option value="@item.ID">@item.Nombre</option>
+                    }
+                </select>
+                <span asp-validation-for="IDTipo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Cantidad" class="control-label">Cantidad</label>
+                <input asp-for="Cantidad" class="form-control" placeholder="Ingresa la cantidad de productos" />
+                <span asp-validation-for="Cantidad" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Modelo" class="control-label">Modelo</label>
+                <input asp-for="Modelo" class="form-control" placeholder="Ingresa el modelo del producto" />
+                <span asp-validation-for="Modelo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Marca" class="control-label">Marca</label>
+                <input asp-for="Marca" class="form-control" placeholder="Ingresa la marca del producto" />
+                <span asp-validation-for="Marca" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary">Añadir Producto</button>
+        </div>
+    </div>
 </form>

@@ -1,4 +1,7 @@
-﻿namespace PruebaRepositoryDTO.DTO
+﻿using System;
+using System.Collections.Generic;
+
+namespace PruebaRepositoryDTO.DTO
 {
 	public class PruductDTO
 	{
@@ -10,5 +13,7 @@
 		public DateTime FechaAlta { get; set; }
 		public string Modelo { get; set; }
 		public string Marca { get; set; }
+		public List<ProviderDTO> Providers { get; set; } = new List<ProviderDTO>();
+		public List<ProductTypeDTO> ProductTypes { get; set; } = new List<ProductTypeDTO>();
 	}
 }

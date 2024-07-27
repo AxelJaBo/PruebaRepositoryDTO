@@ -10,5 +10,6 @@
 		public DateTime FechaAlta { get; set; }
 		public string Modelo {  get; set; }
 		public string Marca { get; set; }
+
 	}
 }
